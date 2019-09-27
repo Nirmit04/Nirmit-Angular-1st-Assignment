@@ -1,0 +1,2 @@
+1. Kindly run npm install to add the node modules
+2. Inside the server-folder run 'node test.js' to start the server
