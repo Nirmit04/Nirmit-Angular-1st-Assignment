@@ -1,0 +1,68 @@
+<div class="mat-elevation-z8">
+    <table style="overflow:hidden" mat-table [dataSource]="dataSource">
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="sno">
+            <th mat-header-cell *matHeaderCellDef> SNo. </th>
+            <td mat-cell *matCellDef="let element"> {{element.no}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Email Column -->
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> Email </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <!-- Title Column -->
+        <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef> Title </th>
+            <td (click)="task4(element.no)" mat-cell *matCellDef="let element"> {{element.title}} </td>
+        </ng-container>
+
+        <!-- Completed Column -->
+        <ng-container matColumnDef="completed">
+            <th mat-header-cell *matHeaderCellDef> Completed </th>
+            <td mat-cell *matCellDef="let element"> {{element.completed}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator #scheduledOrdersPaginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+
+<div *ngIf="task4User">
+    <br />
+    <br />
+    <h3>Task 4</h3>
+    <table class="table">
+        <thead class='thead-dark'>
+            <tr>
+                <th scope="col">User Id</th>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Completed</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{task4User.userId}}</td>
+                <td>{{task4User.id}}</td>
+                <td>{{task4User.title}}</td>
+                <td>{{task4User.completed}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

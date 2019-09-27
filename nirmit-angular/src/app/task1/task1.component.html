@@ -1,0 +1,59 @@
+<div *ngFor="let user of allUsers">
+    <div class="card" style="width: 100%; margin-top: 10px">
+        <div class="card-body">
+            <h5 class="card-title">Email:{{user.email}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">User ID: {{user.id}}</h6>
+            <h6 class="card-text mb-2 text-muted">Name: {{user.name}}</h6>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- ngOnInit() {
+    this.courses = this.apollo.watchQuery<Query>({
+      query: gql`
+      query getCourses($courseTopic: String!) {
+        courses(topic: $courseTopic) {
+          title
+          author
+          description
+          url
+          topic
+        }
+      }
+      `,
+      variables:{courseTopic:'JavaScript'}
+  
+  })
+      .valueChanges
+      .pipe(
+        map(result => result.data.courses)
+      );
+    console.log(this.courses.subscribe(res=>console));
+  } -->
+
+
+
+
+<!-- ngOnInit() {
+    this.courses = this.apollo.watchQuery<Query>({
+      query: gql`
+      query allCourses {
+        courses {
+          id
+          title
+          author
+          description
+          topic
+          url
+        }
+      }      
+      `
+    })
+      .valueChanges
+      .pipe(
+        map(result => result.data.courses)
+      );
+    console.log(this.courses);
+  } -->

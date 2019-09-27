@@ -1,0 +1,20 @@
+<table class="table">
+    <thead class='thead-dark'>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">User Id</th>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Completed</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users;index as i">
+            <th scope="row">{{i+1}}</th>
+            <td>{{user.userId}}</td>
+            <td>{{user.id}}</td>
+            <td>{{user.title}}</td>
+            <td>{{user.completed}}</td>
+        </tr>
+    </tbody>
+</table>
